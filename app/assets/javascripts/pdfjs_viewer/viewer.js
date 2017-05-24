@@ -7143,10 +7143,11 @@ window.PDFView = PDFViewerApplication; // obsolete name, using it as an alias
 
 
 var HOSTED_VIEWER_ORIGINS = ['null',
-  'http://mozilla.github.io', 'https://mozilla.github.io', 'https://webdox-dev.s3.amazonaws.com'];
+  'http://mozilla.github.io', 'https://mozilla.github.io', 'https://webdox-dev.s3.amazonaws.com', 'https://portal.webdox.cl','https://admin.webdox.cl', 'http://localhost:3000'];
 function validateFileURL(file) {
   try {
     var viewerOrigin = new URL(window.location.href).origin || 'null';
+    console.log(viewerOrigin)
     if (HOSTED_VIEWER_ORIGINS.indexOf(viewerOrigin) >= 0) {
       // Hosted or local viewer, allow for any file locations
       return;
